@@ -110,6 +110,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contact
 
 For questions or feedback, feel free to reach out:  
-- Email: [Your Email Address](abdelrahmanalgamil@gmail.com)  
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/abdelrahman-said-mohamed-96b832234/))
+- Email: [Abdelrahman](abdelrahmanalgamil@gmail.com)  
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/abdelrahman-said-mohamed-96b832234/)
 - Tableau: [Tableau Profile](https://public.tableau.com/app/profile/abdelrahman.said2856)
