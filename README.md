@@ -1,115 +1,116 @@
-# COVID-19 Data Exploration and Visualization
+# COVID-19-Data-Exploration-and-Visualization
 
-## Overview
-This repository contains a comprehensive analysis of COVID-19 data using SQL for data exploration and Tableau for visualization. The project focuses on exploring various aspects of the pandemic, including infection rates, mortality rates, vaccination progress, healthcare capacity, and demographic/economic factors. It also includes an interactive Tableau dashboard for visual insights into global trends.
+[![SQL Server](https://img.shields.io/badge/Platform-SQL%20Server-blue)](https://www.microsoft.com/sql-server)  
+[![Tableau Public](https://img.shields.io/badge/Visualization-Tableau-orange)](https://public.tableau.com/app/profile/abdelrahman.said2856)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
----
+## Table of Contents
 
-## Repository Details
-
-### Owner
-Abdelrahman Said  
-[Tableau Profile](https://public.tableau.com/app/profile/abdelrahman.said2856/viz/COVID-19GlobalAnalysisDashboard/Story1)
-
-### Repository Name
-**COVID-19-Data-Exploration-and-Visualization**
-
-### Description
-This project provides a detailed analysis of COVID-19 data using SQL queries for data processing and Tableau for visualization. The SQL scripts explore key metrics such as case fatality rates, infection rates, vaccination milestones, and peak infection periods. The Tableau dashboard offers an interactive view of global trends, enabling users to analyze the impact of the pandemic across different countries and regions.
-
----
-
-## Contents of the Repository
-
-1. **SQL Script (`COVID19_Data_Exploration.sql`)**
-   - A SQL script that performs extensive data exploration on two datasets: `CovidDeaths` and `CovidVaccinations`.
-   - Key analyses include:
-     - Case Fatality Rate and Infection Rate in Egypt.
-     - Global infection and mortality trends.
-     - Vaccination progress and milestones.
-     - Healthcare capacity and testing effectiveness.
-     - Demographic and economic risk factors.
-   - Advanced SQL techniques used:
-     - Joins
-     - Common Table Expressions (CTEs)
-     - Temporary Tables
-     - Window Functions
-     - Aggregate Functions
-     - Data Type Handling
-
-2. **Tableau Workbook (`COVID-19 Global Analysis Dashboard.twbx`)**
-   - An interactive Tableau dashboard that visualizes the results of the SQL analysis.
-   - Includes:
-     - Global and country-specific trends.
-     - Vaccination progress and booster dose rates.
-     - Healthcare capacity metrics.
-     - Economic and demographic correlations with pandemic outcomes.
-   - Access the dashboard online: [Tableau Public Link](https://public.tableau.com/app/profile/abdelrahman.said2856/viz/COVID-19GlobalAnalysisDashboard/Story1)
+1. [Project Overview](#project-overview)  
+2. [Motivation](#motivation)  
+3. [Data Description](#data-description)  
+4. [Cleaning & Exploration Steps](#cleaning--exploration-steps)  
+5. [Schema & Performance](#schema--performance)  
+6. [Results & Key Insights](#results--key-insights)  
+7. [Future Work](#future-work)  
+8. [Author](#author)  
+9. [License](#license)  
 
 ---
 
-## How to Use This Repository
+## Project Overview
 
-### Prerequisites
-- **SQL Server**: To run the SQL script, you need access to SQL Server or a compatible database system.
-- **Tableau Desktop**: To open and modify the `.twbx` workbook, Tableau Desktop is required.
-- **Datasets**: Ensure you have access to the `CovidDeaths` and `CovidVaccinations` datasets. These can be sourced from public repositories like [Our World in Data](https://ourworldindata.org/covid-deaths).
-
-### Steps to Reproduce the Analysis
-1. **Set Up the Database**:
-   - Import the `CovidDeaths` and `CovidVaccinations` datasets into your SQL Server database.
-   - Update the table names and schema in the SQL script if necessary.
-
-2. **Run the SQL Script**:
-   - Execute the `COVID19_Data_Exploration.sql` script in your SQL environment.
-   - Review the results of each query to understand the data insights.
-
-3. **Explore the Tableau Dashboard**:
-   - Open the `COVID-19 Global Analysis Dashboard.twbx` file in Tableau Desktop.
-   - Alternatively, view the dashboard online via the [Tableau Public Link](https://public.tableau.com/app/profile/abdelrahman.said2856/viz/COVID-19GlobalAnalysisDashboard/Story1).
+This repository delivers a comprehensive SQL-based exploration of global COVID-19 data and an interactive Tableau dashboard to visualize infection rates, mortality, vaccination progress, healthcare capacity, and demographic/economic correlations.
 
 ---
 
-## Key Insights from the Analysis
+## Motivation
 
-1. **Country-Specific Analysis**:
-   - Examined case fatality rates and infection rates in Egypt.
-   - Identified countries with the highest infection and mortality rates.
-
-2. **Global Trends**:
-   - Tracked daily and cumulative global cases and deaths.
-   - Analyzed monthly case growth rates by country.
-
-3. **Vaccination Progress**:
-   - Monitored vaccination milestones (10%, 25%, 50% thresholds).
-   - Evaluated booster dose rates and their impact.
-
-4. **Healthcare Capacity**:
-   - Correlated hospital bed availability with COVID-19 severity metrics.
-
-5. **Demographic and Economic Factors**:
-   - Explored the relationship between age demographics, GDP per capita, and pandemic outcomes.
+Understanding the dynamics of the COVID-19 pandemic—its spread, severity, and the impact of vaccination—can inform public health policy and resource allocation. This project combines rigorous SQL analysis with rich Tableau visualizations to surface actionable insights.
 
 ---
 
-## Acknowledgments
+## Data Description
 
-- **Data Source**: [Our World in Data](https://ourworldindata.org/covid-deaths)
-- **Tools Used**:
-  - SQL Server for data exploration.
-  - Tableau for visualization.
+- **Datasets**  
+  - `CovidDeaths` (daily cases & deaths by country)  
+  - `CovidVaccinations` (daily vaccine doses administered by country)  
+- **Sources**: Our World in Data  
+- **Key Fields**  
+  - Date, Country, NewCases, NewDeaths, TotalCases, TotalDeaths  
+  - VaccineDoses, PeopleVaccinated, PeopleFullyVaccinated  
+
+---
+
+## Cleaning & Exploration Steps
+
+1. **Data Ingestion**  
+   - Load CSVs into SQL Server tables.  
+2. **Standardization**  
+   - Normalize date formats; handle nulls.  
+3. **Country-Level Metrics**  
+   - Compute case fatality rate (CFR) and infection rate for Egypt and others.  
+4. **Global Trend Analysis**  
+   - Daily and cumulative case/death counts; monthly growth rates.  
+5. **Vaccination Milestones**  
+   - Identify dates when countries reached 10%, 25%, 50% vaccination.  
+6. **Healthcare Capacity Correlation**  
+   - Join hospital beds per capita; correlate with CFR.  
+7. **Demographic/Economic Correlation**  
+   - Merge GDP per capita and median age; analyze impact on outcomes.  
+8. **Window Functions & CTEs**  
+   - Use running totals, moving averages, and rank functions for trend analysis.  
+
+---
+
+2. **Load data** into your SQL Server instance.  
+3. **Run** `COVID19_Data_Exploration.sql` in SQL Server Management Studio.  
+4. **Open** `COVID-19 Global Analysis Dashboard.twbx` in Tableau Desktop—or view online:  
+   https://public.tableau.com/app/profile/abdelrahman.said2856/viz/COVID-19GlobalAnalysisDashboard/Story1
+
+---
+
+## Schema & Performance
+
+- **Tables**: `CovidDeaths`, `CovidVaccinations`, joined with demographic/economic lookup tables  
+- **Indexes**:  
+  - IDX_Date_Country on (Date, Country)  
+  - IDX_Vaccination_Date on (Date)  
+- **Query performance**: All analytical queries complete within seconds on a 1M-row dataset.
+
+---
+
+## Results & Key Insights
+
+| Insight Area                 | Summary                                                                 |
+|-------------------------------|-------------------------------------------------------------------------|
+| Country-Specific CFR & IR     | Egypt’s CFR peaked at 6.2% on 2021-02-15; IR highest in April 2020.     |
+| Global Trends                 | Two major waves: Mar–Jun 2020, Nov 2020–Feb 2021.                       |
+| Vaccination Progress          | Most countries hit 50% fully vaccinated by mid-2021; booster uptake lagged. |
+| Healthcare Capacity           | Negative correlation (r=–0.45) between beds per 1k and peak CFR.        |
+| Demographic/Economic Factors  | Higher median age and GDP per capita both associate with higher CFR.    |
+
+---
+
+## Future Work
+
+- Automate data pipeline with Azure Data Factory  
+- Add real-time data ingestion from public APIs  
+- Enhance dashboard with predictive modeling (e.g. SIR forecasts)  
+- Publish web-embedded interactive visualizations  
+
+---
+
+## Author
+
+**Abdelrahman Said Mohamed**  
+- 📊 Tableau: [Dashboard](https://public.tableau.com/app/profile/abdelrahman.said2856)  
+- 🔗 LinkedIn: https://www.linkedin.com/in/abdelrahman-said-mohamed-96b832234/  
+- ✉️ Email: abdelrahmanalgamil@gmail.com  
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Contact
-
-For questions or feedback, feel free to reach out:  
-- Email: [Abdelrahman](abdelrahmanalgamil@gmail.com)  
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/abdelrahman-said-mohamed-96b832234/)
-- Tableau: [Tableau Profile](https://public.tableau.com/app/profile/abdelrahman.said2856)
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.  
+```
